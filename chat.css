@@ -1,0 +1,116 @@
+::input-placeholder { 
+    color: black;
+    opacity: 1;
+}
+
+.mytext{
+    border:0;padding:10px;background:whitesmoke;
+z-index:5;}
+.text{
+    width:75%;display:flex;flex-direction:column;
+z-index:5;}
+.text > p:first-of-type{
+    width:100%;margin-top:auto;margin-bottom:auto;line-height: 15px;font-size: 14px;
+z-index:5;}
+.text > p:last-of-type{
+    width:100%;text-align:right;color:grey;margin-bottom:-7px;margin-top:auto;
+z-index:5;}
+.text-l{
+    float:left;padding-right:10px;
+z-index:5;}        
+.text-r{
+    float:right;padding-left:10px;
+z-index:5;}
+.avatar{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:25%;
+    float:left;
+    padding-right:10px;
+z-index:5;}
+.macro{
+    margin-top:5px;width:85%;border-radius:5px;padding:5px;display:flex;
+z-index:5;}
+.msj-rta{
+    float:right;background:whitesmoke;margin-bottom:10px;
+z-index:5;}
+.msj{
+    float:left;background:white;margin-bottom:10px;
+z-index:5;}
+.frame{
+
+    height:450px;
+    overflow:hidden;
+    padding:0;
+z-index:5;}
+.frame > div:last-of-type{
+    position:absolute;bottom:0;width:100%;display:flex;
+z-index:5;}
+body > div > div > div:nth-child(2) > span{
+    background: whitesmoke;padding: 10px;font-size: 21px;border-radius: 50%;
+z-index:5;}
+body > div > div > div.msj-rta.macro{
+    margin:auto;margin-left:4%;
+z-index:5;}
+ul {
+    width:100%;
+    list-style-type: none;
+    padding:18px;
+    position:absolute;
+    bottom:47px;
+    display:flex;
+    flex-direction: column;
+    top:0;
+    overflow-y:scroll;
+z-index:5;}
+.msj:before{
+    width: 0;
+    height: 0;
+    content:"";
+    top:-5px;
+    left:-14px;
+    position:relative;
+    border-style: solid;
+    border-width: 0 13px 13px 0;
+    border-color: transparent #ffffff transparent transparent;            
+z-index:5;}
+.msj-rta:after{
+    width: 0;
+    height: 0;
+    content:"";
+    top:-5px;
+    left:14px;
+    position:relative;
+    border-style: solid;
+    border-width: 13px 13px 0 0;
+    border-color: whitesmoke transparent transparent transparent;           
+z-index:5;}  
+input:focus{
+    outline: none;
+z-index:5;}        
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: grey;
+z-index:5;}
+::-moz-placeholder { /* Firefox 19+ */
+    color: #grey;
+z-index:5;}
+:-ms-input-placeholder { /* IE 10+ */
+    color: #grey;
+z-index:5;}
+:-moz-placeholder { /* Firefox 18- */
+    color: #grey;
+z-index:5;}  
+
+
+.myrocket{
+    background-image: url("rocket.png");
+    height:50px;
+    width: 50px;
+    
+
+}
+
+.submit_btn{
+    z-index:6;
+}
