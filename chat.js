@@ -107,7 +107,7 @@ var btn = document.querySelector('#submit_btn')
 function loadDoc() {
   $.ajax({
   type: 'POST',
-  url: 'http://adarshshrivastava001.pythonanywhere.com/bot/',
+  url: 'https://adarshshrivastava001.pythonanywhere.com/bot/',
   data: {'que':document.getElementById("mytext").value},
   dataType: 'json',
   success: function (data) {
