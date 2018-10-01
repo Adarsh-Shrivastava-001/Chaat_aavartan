@@ -101,8 +101,8 @@ insertChat("bot", "Hello pal...", 0);
 
 
 
-
 var btn = document.querySelector('#submit_btn')
+
 
 function loadDoc() {
   $.ajax({
@@ -113,6 +113,10 @@ function loadDoc() {
   success: function (data) {
           console.log(data)
           insertChat("bot",data.ans,0)
+          if(data.sug1){
+            ans="<b>Here are some FAQ for your refernce</b><br><br><ol><li class='sug1'>"+data.sug1+"</li><br><li class='sug2'>"+data.sug2+"</li><br><li class='sug3'>"+data.sug3+"</li><br><li class='sug4'>"+data.sug4+"</li><br><li class='sug5'>"+data.sug5+"</li></ol>"
+            insertChat("bot",ans,0)
+          }
           
           
           

@@ -3,6 +3,10 @@
     opacity: 1;
 }
 
+ol {
+    margin:10px;
+}
+
 .mytext{
     border:0;padding:10px;background:whitesmoke;
 z-index:5;}
@@ -27,6 +31,7 @@ z-index:5;}
     align-items:center;
     width:25%;
     float:left;
+    float:top;
     padding-right:10px;
 z-index:5;}
 .macro{
