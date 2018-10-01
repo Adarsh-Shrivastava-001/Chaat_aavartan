@@ -13,16 +13,32 @@
     <link href="chat.css" rel="stylesheet" id="bootstrap-css">
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    
+    <style>
+    html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+</style>
     
 </head>
-    <body><br>
-        <br>
-
-        <div class="col-sm-3 col-sm-offset-4 frame">
+    <body>
             <div class="stars"></div>
 <div class="twinkling"></div>
 <div class="clouds"></div>
+        <br>
+        <br>
+
+        <div class="col-sm-3 col-sm-offset-4 frame" style="z-index:9;border: 2px solid white;border-radius:2%;">
+
+
             <ul></ul>
             <div>
                 <div class="msj-rta macro">                        
