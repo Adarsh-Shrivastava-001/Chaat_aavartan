@@ -3,7 +3,6 @@ me.avatar = "robot.png";
 
 var you = {};
 you.avatar = "me.png";
-
 function formatAMPM(date) {
     var hours = date.getHours();
     var minutes = date.getMinutes();
@@ -47,6 +46,8 @@ function insertChat(who, text, time){
                   '</li>';
 
                   loadDoc()
+                //   loadDoc().then(trigger(), trigger());
+
     }
     setTimeout(
         function(){                        
@@ -54,6 +55,10 @@ function insertChat(who, text, time){
         }, time);
     
 }
+
+
+
+
 
 function resetChat(){
     $("ul").empty();
@@ -71,7 +76,7 @@ $(".mytext").on("keydown", function(e){
 
 
 $(".submit_btn").on("click", function(e){
-    
+    console.log("triggered submit button ")
         var text = document.getElementById("mytext");
         console.log(text)
         if (text !== ""){
@@ -100,12 +105,11 @@ insertChat("bot", "Hello pal...", 0);
 
 
 
-
 var btn = document.querySelector('#submit_btn')
 
 
 function loadDoc() {
-  $.ajax({
+    $.ajax({
   type: 'POST',
   url: 'https://adarshshrivastava001.pythonanywhere.com/bot/',
   data: {'que':document.getElementById("mytext").value},
@@ -114,15 +118,42 @@ function loadDoc() {
           console.log(data)
           insertChat("bot",data.ans,0)
           if(data.sug1){
-            ans="<b>Here are some FAQ for your refernce</b><br><br><ol><li class='sug1'>"+data.sug1+"</li><br><li class='sug2'>"+data.sug2+"</li><br><li class='sug3'>"+data.sug3+"</li><br><li class='sug4'>"+data.sug4+"</li><br><li class='sug5'>"+data.sug5+"</li></ol>"
+            ans="<b>Here are some FAQ for your refernce</b><br><br><ol><a><li class='sug1'>"+data.sug1+"</li></a><br><a><li class='sug2'>"+data.sug2+"</li></a><br><a><li class='sug3'>"+data.sug3+"</li></a><br><a><li class='sug4'>"+data.sug4+"</li></a><br><a><li class='sug5'>"+data.sug5+"</li></a></ol>"
             insertChat("bot",ans,0)
+            setTimeout(
+                function(){                        
+                    $('.sug1').click(function(){
+                      console.log($(this).text())
+                      document.getElementById("mytext").value=$(this).text()
+                         insertChat("me", $(this).text(), 0)
+                         document.getElementById("mytext").value=""
+                         
+                        });  
+                        $('.sug2').click(function(){
+                          document.getElementById("mytext").value=$(this).text()
+                            insertChat("me", $(this).text(), 0)
+                            document.getElementById("mytext").value=""
+                           });  
+                           $('.sug3').click(function(){
+                            document.getElementById("mytext").value=$(this).text()
+                            insertChat("me", $(this).text(), 0)
+                            document.getElementById("mytext").value=""
+                           });              
+
+                           $('.sug4').click(function(){
+                            document.getElementById("mytext").value=$(this).text()
+                            insertChat("me", $(this).text(), 0)
+                            document.getElementById("mytext").value=""
+                           });  
+                           $('.sug5').click(function(){
+                            document.getElementById("mytext").value=$(this).text()
+                            insertChat("me", $(this).text(), 0)
+                            document.getElementById("mytext").value=""
+                           });   
+                    }, 1000);
           }
-          
-          
-          
         }
 });
-
 
 }
 
@@ -135,5 +166,4 @@ btn.addEventListener('click',e=>{
 }
 
 })
-
 
